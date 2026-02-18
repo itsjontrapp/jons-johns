@@ -25,54 +25,63 @@ export default async function ReviewPage({ params }: { params: Promise<{ slug: s
     <article className="mx-auto max-w-3xl px-6 py-16">
       {/* Header */}
       <div className="mb-10 flex items-start justify-between gap-6">
-        <div>
-          <h1 className="font-display text-4xl text-brown">{review.title}</h1>
-          <p className="mt-2 text-sm text-foreground/50">{review.address}</p>
-          <p className="mt-1 text-sm text-foreground/40">
-            Visited {new Date(review.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-          </p>
-          {(review.website || review.googleMaps) && (
-            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
-              {review.website && (
-                <a
-                  href={review.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-teal hover:underline"
-                >
-                  {review.logo && (
-                    <Image
-                      src={review.logo}
-                      alt={`${review.title} logo`}
-                      width={20}
-                      height={20}
-                      className="rounded-sm"
-                    />
-                  )}
-                  Website &rarr;
-                </a>
-              )}
-              {review.googleMaps && (
-                <a
-                  href={review.googleMaps}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-teal hover:underline"
-                >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                  </svg>
-                  Google Maps &rarr;
-                </a>
-              )}
-            </div>
+        <div className="flex items-start gap-5">
+          {review.logo && (
+            <a
+              href={review.website || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0"
+            >
+              <Image
+                src={review.logo}
+                alt={`${review.title} logo`}
+                width={72}
+                height={72}
+                className="rounded-xl border border-brown/10 bg-white p-1.5"
+              />
+            </a>
           )}
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {review.tags.map((tag) => (
-              <span key={tag} className="rounded-full bg-teal/10 px-2.5 py-0.5 text-xs font-medium text-teal">
-                {tag}
-              </span>
-            ))}
+          <div>
+            <h1 className="font-display text-4xl text-brown">{review.title}</h1>
+            <p className="mt-2 text-sm text-foreground/50">{review.address}</p>
+            <p className="mt-1 text-sm text-foreground/40">
+              Visited {new Date(review.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+            </p>
+            {(review.website || review.googleMaps) && (
+              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
+                {review.website && (
+                  <a
+                    href={review.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-teal hover:underline"
+                  >
+                    Website &rarr;
+                  </a>
+                )}
+                {review.googleMaps && (
+                  <a
+                    href={review.googleMaps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-teal hover:underline"
+                  >
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Google Maps &rarr;
+                  </a>
+                )}
+              </div>
+            )}
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {review.tags.map((tag) => (
+                <span key={tag} className="rounded-full bg-teal/10 px-2.5 py-0.5 text-xs font-medium text-teal">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         <RatingBadge score={review.overall} size="lg" />
