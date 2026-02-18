@@ -35,6 +35,7 @@ export interface ReviewMeta {
   tags: string[];
   website?: string;
   logo?: string;
+  googleMaps?: string;
 }
 
 export interface Review extends ReviewMeta {
@@ -67,6 +68,7 @@ export function getReviewBySlug(slug: string): Review {
     tags: data.tags || [],
     website: data.website || undefined,
     logo: data.logo || undefined,
+    googleMaps: data.googleMaps || undefined,
     content,
   };
 }

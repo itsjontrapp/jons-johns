@@ -4,21 +4,26 @@ export default function AboutPage() {
       <h1 className="mb-8 font-display text-4xl text-brown">About Jon&apos;s Johns</h1>
       <div className="space-y-4 text-foreground/70 leading-relaxed">
         <p>
-          Welcome to Jon&apos;s Johns — a blog dedicated to the most underrated part of any
-          dining or public experience: the bathroom.
+          Look, nobody reviews bathrooms. That&apos;s the whole point. You can find a thousand
+          Google reviews about the coffee or the pasta, but nobody&apos;s telling you about the
+          handsoap. Nobody&apos;s telling you if they sprung for paper towels or stuck you with
+          one of those jet-engine hand dryers. I am.
         </p>
         <p>
-          Good lighting matters. Quality hand soap is a game changer. A warm towel over a
-          jet-engine blower? That&apos;s civilization. This blog takes the things most people
-          overlook and puts them front and center.
+          Jon&apos;s Johns is about the full experience. The vibe when you walk in. The lighting.
+          The scent. Whether there&apos;s actually TP stocked or you&apos;re rolling the dice. These
+          things matter, and honestly, the bathroom says a lot about a place. If they care about
+          the room most people overlook, they probably care about everything else too.
         </p>
         <p>
-          Every review covers the full experience — from the vibe and ambiance to the scent,
-          the soap, and yes, whether they sprung for hand lotion. Each location also gets a
-          unique spotlight category that captures what makes it stand out (or fall flat).
+          Every review breaks down the categories that matter: ambiance, cleanliness, soap and
+          amenities, the drying situation, all of it. Each spot also gets a spotlight for whatever
+          makes it uniquely great (or uniquely terrible). And yeah, I&apos;ll say it if the
+          handsoap is fucking incredible.
         </p>
         <p>
-          Is this silly? Absolutely. But someone has to do it.
+          Is this a bit ridiculous? Sure. But someone had to do it, and honestly, once you start
+          noticing this stuff, you can&apos;t stop.
         </p>
       </div>
     </section>

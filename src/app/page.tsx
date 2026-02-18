@@ -1,8 +1,15 @@
 import { getAllReviews } from "@/lib/reviews";
 import ReviewCard from "@/components/ReviewCard";
+import Link from "next/link";
 
 export default function Home() {
   const reviews = getAllReviews();
+  const latestReview = reviews[0];
+
+  const featuredQuotes = [
+    { text: "Wait until you use the fucking handsoap.", source: "Kid Dream", slug: "kid-dream" },
+  ];
+  const quote = featuredQuotes[0];
 
   return (
     <div>
@@ -14,7 +21,29 @@ export default function Home() {
         <p className="mx-auto mt-4 max-w-md text-lg text-foreground/60 italic">
           The unofficial guide to the most overlooked rooms.
         </p>
+        <p className="mt-6 text-sm text-foreground/40">
+          Nobody&apos;s reviewing the handsoap. Until now.{" "}
+          <Link href="/about" className="text-teal hover:underline">
+            What is this? &rarr;
+          </Link>
+        </p>
       </section>
+
+      {/* Featured Quote */}
+      {quote && (
+        <section className="mx-auto max-w-2xl px-6 pb-12">
+          <Link href={`/reviews/${quote.slug}`} className="block group">
+            <blockquote className="rounded-2xl border border-brown/10 bg-cream p-8 text-center transition-shadow group-hover:shadow-md">
+              <p className="font-display text-xl text-brown italic">
+                &ldquo;{quote.text}&rdquo;
+              </p>
+              <cite className="mt-3 block text-sm text-foreground/40 not-italic">
+                &mdash; {quote.source}
+              </cite>
+            </blockquote>
+          </Link>
+        </section>
+      )}
 
       {/* Recent Reviews */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
