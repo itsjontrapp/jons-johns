@@ -21,12 +21,6 @@ export default function Home() {
         <p className="mx-auto mt-4 max-w-md text-lg text-foreground/60 italic">
           The unofficial guide to the most overlooked rooms.
         </p>
-        <p className="mt-6 text-sm text-foreground/40">
-          Nobody&apos;s reviewing the handsoap. Until now.{" "}
-          <Link href="/about" className="text-teal hover:underline">
-            What is this? &rarr;
-          </Link>
-        </p>
       </section>
 
       {/* Featured Quote */}
