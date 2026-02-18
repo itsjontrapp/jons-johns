@@ -1,26 +1,33 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F5F0E8;
+  --foreground: #2D2A26;
+  --accent-teal: #5B8A8A;
+  --accent-brown: #8B6F4E;
+  --accent-cream: #FAF7F2;
+  --accent-gold: #C4A35A;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-teal: var(--accent-teal);
+  --color-brown: var(--accent-brown);
+  --color-cream: var(--accent-cream);
+  --color-gold: var(--accent-gold);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-righteous);
+  --font-pixel: var(--font-pixel);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display), cursive;
 }
